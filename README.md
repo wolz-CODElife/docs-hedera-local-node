@@ -1,47 +1,25 @@
 # Welcome to Hedera Local Node 👋
-THe Hedera Local Node is a single node that replicates the Hedera network on a development environment/local machine offering a controlled environment for developing, testing, and experimenting with [decentralized applications (dApps)](https://docs.hedera.com/hedera/support-and-community/glossary#decentralized-application-dapp).
+The Hedera Local Node replicates the Hedera network in a development environment, offering a controlled setup for developing, testing, and experimenting with [Decentralized Applications (dApps)](https://docs.hedera.com/hedera/support-and-community/glossary#decentralized-application-dapp).
 
-- ⚡ Rapid Initialization: Fast startup and synchronization, ensuring quick iterations during development.
-- 💯 Comprehensive Hedera API Support: Full support for [Hedera APIs](https://docs.hedera.com/hedera/sdks-and-apis), enabling seamless interaction with the local network.
+- ⚡ Quick Initialization: Fast startup and synchronization, ensuring quick iterations during development.
+- 💯 Sufficient Hedera API Support: Full support for [Hedera APIs](https://docs.hedera.com/hedera/sdks-and-apis), enabling seamless interaction with the local network.
 - 🔎 Low Latency: Minimal response times for RPC calls, ensuring efficient and smooth application performance.
 - 🛠️ Controlled Environment: Provides a controlled and isolated environment for testing and debugging, reducing the risk of conflicts with other network resources.
 
 ### 🏃‍♂️ Getting started
 Learn how to set up, configure and manage your Hedera Local Node using the following resources:
 
-- [💻 Hardware Requirements](#-hardware-requirements)
+- [💻 Requirements](#-requirements)
 - [🚀 Setting up Hedera Local Node](#-setting-up-hedera-local-node)
 - [🛠️ Configuration Options](#%EF%B8%8F-configuration-options)
 - [Ⓜ️ Operational Modes](#%E2%93%9C%EF%B8%8F-operational-modes)
-- [🔀 Troubleshooting](#-troubleshooting)
 - [🤼‍♂️ Interacting with Hedera Local Node](#%EF%B8%8F-interacting-with-hedera-local-node)
+- [🔀 Troubleshooting](#-troubleshooting)
 
 ---
 
-### 🆘 Community and Support
-
-Join our community for support, discussions, and updates:
-
-- [Discord](https://hedera.com/discord): Real-time connection with Hedera team and community.
-- [X (Twitter)](https://x.com/hedera): Latest news and insights from Hedera.
-- [Telegram](https://t.me/hederahashgraph): Share ideas and stay informed with Hedera users.
-- [Meetups](https://docs.hedera.com/hedera/support-and-community/meetups): Learn and connect at community meetups.
-- [Events](https://hedera.com/events): Engage in discussions and explore Hedera ecosystem.
-
-### 🤝 Contributions and partnerships
-
-We value community contributions and are eager to support your involvement. Here’s how you can contribute:
-
-- ⭐ Give Hedera Local Node a [star on GitHub](https://github.com/hashgraph/hedera-local-node/stargazers).
-- 📝 Share your thoughts on [X (Twitter)](https://x.com/hedera).
-- 🐞 [Report bugs](https://github.com/hashgraph/hedera-local-node/issues/new?assignees=&labels=bug&projects=&template=bug.yml) or [suggest new features](https://github.com/hashgraph/hedera-local-node/issues/new?assignees=&labels=enhancement&projects=&template=enhancement.yml).
-- 📣 Encourage others to explore and use Hedera Local Node.
-
-> ### 💡 TIP
-> If you're ready to make PRs but unsure where to start, join our [Discord](https://hedera.com/discord), and we'll guide you through some beginner-friendly issues.
-
-## 💻 Hardware Requirements
-The following specifications outline the minimal hardware requirements required to run the Hedera Local Node for different usage scenarios.
+## 💻 Requirements
+The following specifications outline the prerequisites required to run the Hedera Local Node:
 
 | Requirement                                        | Minimum Version       | Check Command             |
 |----------------------------------------------------|-----------------------|---------------------------|
@@ -67,9 +45,8 @@ Ensure the following settings are set in your Docker Desktop app:
 - Enable `Allow the default Docker sockets to be used (requires password)` in Docker settings.
   ![Hedera Local Node Img2](https://github.com/wolz-CODElife/docs-hedera-local-node/assets/55518764/122adb1e-782e-4937-8fc7-9285f83d9e73)
 
-
-> ### 🚨 Note
-> We intend the above specifications as a guideline. The minimal requirements support basic node operations, and may require increasing the parameters to ensure optimal performance and scalability for advanced needs.
+> [!NOTE]
+> We intend the above specifications as a guideline. The provided requirements support basic node operations and may require increasing the parameters to ensure optimal performance and scalability for advanced needs.
 > 
 > The images may look different if you are on a different version
 
@@ -84,9 +61,9 @@ You can run the Hedera Local Node in the following environments below:
 ### Installation
 To set up Hedera Local Node, you need to install the following components:
 
-1. Node.js and NPM: Install Node.js (version `>= v14.x`) and NPM (version `>= v6.14.17`) by following the [official installation guide](https://nodejs.org/).
+1. Node.js and NPM: Install Node.js by following the [official installation guide](https://nodejs.org/).
 
-2. Docker: Install Docker (version `>= v20.10.x`) and Docker Compose (version `>= v2.12.2`). Refer to the [Docker Setup Guide](https://docs.docker.com/get-docker/) for detailed instructions. Note that setup steps may vary based on your operating system.
+2. Docker: For detailed instructions, read the [Docker Setup Guide](https://docs.docker.com/get-docker/). Note that setup steps may vary based on your operating system.
 
 3. CLI Tool: Use the following command to install the official release from the NPM repository:
    ```bash
@@ -94,13 +71,13 @@ To set up Hedera Local Node, you need to install the following components:
    ```
    This version includes a pre-configured Docker Compose setup and does not reflect any local changes made to the repository.
 
-   For testing against the latest changes or specific branches/tags, install the `hedera-local` module as a symlink to your locally checked out copy of the repository:
+   For testing against the latest changes or specific branches/tags, install the `hedera-local` module as a symlink to your locally checked-out copy of the repository:
    ```bash
    npm install && npm install -g
    ```
    
-> ### 🚨 Note
-> This version may not reflect the most recent changes to the main branch of this repository. It also uses a baked in version of the Docker Compose definitions and will not reflect any local changes made to the repository.
+> [!NOTE]
+> This version may not reflect the most recent changes to the main branch of this repository. It also uses a baked-in version of the Docker Compose definitions and will not reflect any local changes made to the repository.
 
 ### Clone the Local Network
 
@@ -112,8 +89,8 @@ cd hedera-local-node
 npm install
 ```
 
-> ### 🚨 Note
-> For Windows users: You will need to update the file endings of `compose-network/mirror-node/init.sh` to enable compatibility with Unix-based systems by running this command in WSL:
+> [!IMPORTANT]
+> For Windows users: You will need to update the file endings of `compose-network/mirror-node/init.sh` to enable compatibility with Unix-based systems by running this command in WSL in the `/hedera-local-node` directory:
 >
 > ```bash
 > dos2unix compose-network/mirror-node/init.sh
@@ -123,12 +100,12 @@ npm install
 
 Before launching the network commands, ensure Docker is open on your machine. Note that the network will not start if Docker is not installed as per the above steps.
 
-To start the local network, run the command below in the `/hedera-local-node` directory:
+To start the local network, run the command below:
 ```bash
 npm run start
 ```
-> ### 💡 Tip
-> You can pass the following CLI flags, this would be used later in the following sections:
+> [!TIP]
+> You can pass the following CLI flags to overwrite certain default configurations:
 > ```
 > --d / --detached - Start the local node in detached mode.
 > --h / --host - Override the default host.
@@ -141,7 +118,7 @@ npm run start -- -d
 
 or
 
-// will start local node but will not generate the first 30 accounts
+// starts local node without generating the first 30 accounts
 docker compose up -d
 ```
 
@@ -211,8 +188,8 @@ module.exports = {
   - **accounts:** Lists the private keys of the generated accounts. These keys are used to sign transactions in your local network.
   - **chainId:** Sets the chain ID for the local network. For Hedera Local Node, use `298`.
 
-> ### 🚨 Note
-> Generated accounts are 3 types (ECDSA, Alias ECDSA and ED25519). All of them are usable via HederaSDK. Only Alias ECDSA accounts can be imported into wallet like Metamask or used in ethers.
+> [!NOTE]
+> Generated accounts are 3 types (ECDSA, Alias ECDSA and ED25519). All of them are usable via HederaSDK. Only Alias ECDSA accounts can be imported into a wallet like Metamask or used in ethers.
 > 
 > Read more about [developer mode here](https://github.com/hashgraph/hedera-json-rpc-relay/blob/main/docs/dev-mode.md)
 
@@ -272,57 +249,6 @@ Hedera Local Node operates in two primary modes, Full Mode and Turbo Mode, each 
   
   Turbo Mode is ideal for situations where the priority is on high performance and immediate data access, rather than long-term data storage.
 
-## 🔀 Troubleshooting
-Find below some common errors and how to troubleshoot them:
-
-> ### Error: Node cannot start properly because necessary ports are in use!
->
-> When attempting to start the Hedera Local Node, you might encounter an error indicating that certain ports are in use. This prevents the node from starting properly. Here is an example of the error message:
->
-> ```plaintext
-> hedera-local-node % npm run start -- -d
-> > @hashgraph/hedera-local@2.26.2 start
-> > npm run build && node ./build/index.js start -d
->
-> > @hashgraph/hedera-local@2.26.2 build
-> > rimraf ./build && tsc
->
-> [Hedera-Local-Node] INFO (StateController) [✔︎] Starting start procedure!
-> [Hedera-Local-Node] INFO (InitState) ⏳ Making sure that Docker is started and it is correct version...
-> [Hedera-Local-Node] INFO (DockerService) ⏳ Checking docker compose version...
-> [Hedera-Local-Node] INFO (DockerService) ⏳ Checking docker resources...
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5551 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 8545 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5600 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5433 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 8082 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 6379 is in use.
-> [Hedera-Local-Node] WARNING (DockerService) [!] Port 7546 is in use.
-> [Hedera-Local-Node] WARNING (DockerService) [!] Port 8080 is in use.
-> [Hedera-Local-Node] WARNING (DockerService) [!] Port 3000 is in use.
-> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Node cannot start properly because necessary ports are in use!
-> ```
->
-> ### Suggested Fix
-> 
-> ##### Option 1: Generate New Accounts
->
->Instead of starting another instance of the network, use the command below to generate new accounts for an already running network:
->
-> ```bash
-> npm run generate-accounts
-> ```
-> 
-> #### Option 2: Terminate Existing Processes
->
-> If the above error occurs, ensure that you terminate any existing Docker processes for the local node and any other processes that are bound to these port numbers before running the `npm start` command. You can use the following commands to stop and clean up the Docker environment:
->
-> ```bash
-> docker compose down -v
-> git clean -xfd
-> git reset --hard
-> ```
-
 By stopping and cleaning up existing processes, you free up the necessary ports, allowing the Hedera Local Node to start properly.
 
 ## 🤼‍♂️ Interacting with Hedera Local Node
@@ -343,7 +269,7 @@ These are the local network variables to interact with the consensus and mirror 
 
 ### Folder Setup
 
-The folder setup for Hedera Local Node includes various directories needed for configuration and operation.
+The folder setup for the Hedera Local Node includes various directories needed for configuration and operation.
 ```lua
 hedera-local-node/
 ├── compose-network/
@@ -357,7 +283,7 @@ hedera-local-node/
 |--------|-------------|
 | `compose-network` | Contains static files needed for starting the local network. |
 | `compose-network/grafana/dashboards` | Contains Grafana dashboard definitions in JSON format. Provisioned automatically at startup. |
-| `compose-network/grafana/datasources` | Contains Grafana datasource definitions in YAML format. Provisioned automatically at startup. |
+| `compose-network/grafana/datasources` | Contains Grafana data source definitions in YAML format. Provisioned automatically at startup. |
 | `network-logs` | Created at runtime in the working directory, contains all log files generated after starting the local node. |
 
 The local node writes its ephemeral data to a working directory, which can be set using the `--workdir` flag. The default directory depends on the OS:
@@ -380,7 +306,7 @@ To modify memory limits, properties, and other configurations, update the `.env`
 
 To change properties in `application.properties`, `api-permission.properties`, or `bootstrap.properties`, update the `APPLICATION_CONFIG_PATH` to the location of the updated config folder in the `.env` file.
 
-> ### 🚨 Note
+> [!TIP]
 > Ensure to run `docker compose down -v`, `git clean -xfd`, and `git reset --hard` before `docker compose up -d` for the changes to take effect.
 
 ### Exposed Endpoints
@@ -443,6 +369,83 @@ For more detailed information on interacting with your local network, refer to t
   For a step-by-step guide, visit the [Hedera Smart Contracts tutorial](https://docs.hedera.com/hedera/tutorials/smart-contracts).
 
 These references provide comprehensive guides on creating and submitting transactions, interacting with the mirror node via REST APIs, and deploying smart contracts on the Hedera network.
+
+
+## 🔀 Troubleshooting
+Find below some common errors and how to troubleshoot them:
+
+> ### Error: Node cannot start properly because necessary ports are in use!
+>
+> When attempting to start the Hedera Local Node, you might encounter an error indicating that certain ports are in use. This prevents the node from starting properly. Here is an example of the error message:
+>
+> ```plaintext
+> hedera-local-node % npm run start -- -d
+> > @hashgraph/hedera-local@2.26.2 start
+> > npm run build && node ./build/index.js start -d
+>
+> > @hashgraph/hedera-local@2.26.2 build
+> > rimraf ./build && tsc
+>
+> [Hedera-Local-Node] INFO (StateController) [✔︎] Starting start procedure!
+> [Hedera-Local-Node] INFO (InitState) ⏳ Making sure that Docker is started and it is correct version...
+> [Hedera-Local-Node] INFO (DockerService) ⏳ Checking docker compose version...
+> [Hedera-Local-Node] INFO (DockerService) ⏳ Checking docker resources...
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5551 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 8545 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5600 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 5433 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 8082 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Port 6379 is in use.
+> [Hedera-Local-Node] WARNING (DockerService) [!] Port 7546 is in use.
+> [Hedera-Local-Node] WARNING (DockerService) [!] Port 8080 is in use.
+> [Hedera-Local-Node] WARNING (DockerService) [!] Port 3000 is in use.
+> [Hedera-Local-Node] ERROR (DockerService) [✘] [✘] Node cannot start properly because necessary ports are in use!
+> ```
+>
+> ### Suggested Fix
+> 
+> ##### Option 1: Generate New Accounts
+>
+>Instead of starting another instance of the network, use the command below to generate new accounts for an already running network:
+>
+> ```bash
+> npm run generate-accounts
+> ```
+> 
+> #### Option 2: Terminate Existing Processes
+>
+> If the above error occurs, ensure that you terminate any existing Docker processes for the local node and any other processes that are bound to these port numbers before running the `npm start` command. You can use the following commands to stop and clean up the Docker environment:
+>
+> ```bash
+> docker compose down -v
+> git clean -xfd
+> git reset --hard
+> ```
+
+---
+
+### 🆘 Community and Support
+
+Join our community for support, discussions, and updates:
+
+- [Discord](https://hedera.com/discord): Real-time connection with Hedera team and community.
+- [X (Twitter)](https://x.com/hedera): Latest news and insights from Hedera.
+- [Telegram](https://t.me/hederahashgraph): Share ideas and stay informed with Hedera users.
+- [Meetups](https://docs.hedera.com/hedera/support-and-community/meetups): Learn and connect at community meetups.
+- [Events](https://hedera.com/events): Engage in discussions and explore Hedera ecosystem.
+
+### 🤝 Contributions and partnerships
+
+We value community contributions and are eager to support your involvement. Here’s how you can contribute:
+
+- ⭐ Give Hedera Local Node a [star on GitHub](https://github.com/hashgraph/hedera-local-node/stargazers).
+- 📝 Share your thoughts on [X (Twitter)](https://x.com/hedera).
+- 🐞 [Report bugs](https://github.com/hashgraph/hedera-local-node/issues/new?assignees=&labels=bug&projects=&template=bug.yml) or [suggest new features](https://github.com/hashgraph/hedera-local-node/issues/new?assignees=&labels=enhancement&projects=&template=enhancement.yml).
+- 📣 Encourage others to explore and use Hedera Local Node.
+
+> [!TIP]
+> If you're ready to make PRs but unsure where to start, join our [Discord](https://hedera.com/discord), and we'll guide you through some beginner-friendly issues.
+
 
 ## 📄 License
 
